@@ -15,7 +15,9 @@ img{
 .flex{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
+
 nav{
     padding: 5px 2%;
     justify-content: space-between;
@@ -150,21 +152,20 @@ nav{
 }
 .banner img{
     width: 83%;
-    border-radius:8px;
+    border-radius:0px;
 }
 .container-list{
     display: grid;
     margin-top: 10px;
-    /* width: 100%; */
+    grid-gap: 5px;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    grid-column-gap:0px;
-    grid-row-gap: 0px;
 }
-.vidlist{
-width: 98%;
+.container-list .vidlist a img{
+    width: 96%;
+    height: 130px;
 }
 .vidlist :nth-child(1){
-    border-radius: 5%;
+    border-radius: 0%;
     margin:0px 0px 0px 0px;
     width: 90%;
 }
@@ -182,14 +183,12 @@ width: 98%;
 .vidlist .grid .info {
     margin-top: -46px;
     margin-left: 40px;
-    /* display: inline-flex; */
 
 }
 .vidlist .grid .info a{
     font-size: 15px;
-     margin-left: -3px;
-     font-weight: bolder;
-    /* line-height: 1px; */
+    margin-left: -3px;
+    font-weight: bolder;
     color: black;
     letter-spacing: 1px;
     width: 100%;
@@ -197,11 +196,8 @@ width: 98%;
 .vidlist .grid .info p{
     font-size: 10px;
      margin-top: -2px;
-     /* font-weight: bolder; */
-    /* line-height: 1px; */
         color: black;
     letter-spacing: 1px;
-    /* width: 100%; */
 }
 @media (max-width:900px){
     .menu-icon{
@@ -260,9 +256,13 @@ width: 98%;
     }
     .rightsidebar .sidevidlist .vid-info{
         flex-basis: 40%;
-        width: 700px;
+        width: 550px;
         /* margin: auto; */
     }
+    .playContainer .row .playV video{
+        max-width:99% ;
+    }
+   
    
 }
 /* ...................playVid............ */
@@ -270,6 +270,12 @@ width: 98%;
     margin: 5px 0px 0px 5px;
     /* height: 10vh; */
     width: 98%;
+}
+.playContainer .row hr{
+    width: 100%;
+    height: 0;
+    display: grid;
+    grid-template-columns:3fr 1fr ;
 }
 .row{
     display: flex;
@@ -280,17 +286,23 @@ width: 98%;
  .playV{
     flex-basis: 69%;
     /* border: 1px solid black; */
-
+    width: 100%;
     /* width: 68%; */
 } 
 .playV video{
-    width: 99.5%;
+    width: 99%;
 }
+/* ................rightsidebar...... */
   .rightsidebar{
     flex-basis: 30%;
     display: block;
     position: sticky;
     width: 100%;
+    height:auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
     /* border: 1px solid blue; */
  }
   .sidevidlist a img{
@@ -318,7 +330,23 @@ width: 98%;
     margin-top: 0px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
- 
+ .flexe{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+ }
+ .playv-info .vidsMis{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 40px;
+    width: auto;
+    flex-wrap: wrap;
+ } 
+ .playv-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
  .playv-info .vidsMis img{
     width: 50px;    
     margin-right: 5px;
@@ -337,4 +365,145 @@ width: 98%;
     align-items: center;
     margin-left: 15px;
  }
- 
+ /* ..................personal.............. */
+ .personal{
+    margin-top: 0px;
+    width: 68.7%;
+    display: flex;
+    width: 98%;
+    align-items: center;
+ }
+ .personal div{
+    flex: 1;
+    width: 100%;
+ }
+ .personal img{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: sticky;
+ }
+ .personal div p{
+    line-height: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    /* margin-bottom: ; */
+    letter-spacing: 1px;
+ }
+ .personal div p span{
+    line-height: 0px;
+    color: #5a5a5a;
+    font-size: 13px;
+    font-weight: bold;
+    
+ }
+ button{
+    background-color: red;
+    border-color: transparent;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    margin: auto;
+    color: #f9f9f9;
+ }
+ #like{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+ }
+ .vid-description{
+    padding-left: 55px;
+    margin: 15px 0px 15px 0px;
+
+ }
+ .vid-description p{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+ }
+.vid-description h4{
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-top: 15px;
+}
+.vid-description .add-comments{
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+
+}
+.add-comments img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.add-comments input{
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding-top: 10px;
+    background: transparent;
+}
+/* ............oldcomments..... */
+.old-comments{
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    flex: 1;
+}
+.old-comments img{
+    width: 30px;
+    position:static;
+    border-radius: 50%;
+    margin-right: -30px;
+    margin-bottom: -10px;
+}
+.old-comments .jack p{
+    font-size: 15px;
+    font-weight: 300;
+}
+.old-comments .jack p span{
+    font-size: 13px;
+    font-weight: bolder;
+    color:  #ccc;
+}
+.old p{
+    margin-left:50px;
+    margin-top: -10px;
+    font-size: 15px;
+}
+.commentsreaction{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    margin-right: 0px;
+}
+.commentsreaction a{
+    margin-left: 15px;
+    color: blue;
+}
+.commentsreaction span{
+    margin-left: 15px;
+}
+@media (max-width:900px) {
+    /* .vidsMis{
+        max-width: 900px;
+    } */
+    .rightsidebar{
+        display: none;
+    }
+    .playv-info .vidsMis{
+        max-width:90%;
+    }
+    .rightsidebar{
+        display: none;
+    }
+    .personal{
+        display: flex;
+        
+    }
+    .personal :nth-child(3){
+        padding: auto;
+        width: auto;
+    }
+}
